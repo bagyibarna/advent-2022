@@ -2,17 +2,18 @@ module Main (main) where
 
 import System.Environment (getArgs)
 import qualified Day01
+import qualified Day02
 
-implementation :: String -> Maybe (String -> String, String -> String)
-implementation "01" = Just (Day01.part1, Day01.part2)
-implementation _ = Nothing
+days = [
+    ("01", (Day01.part1, Day01.part2)),
+    ("02", (Day02.part1, Day02.part2))
+  ]
 
-main = do 
-  day <- head <$> getArgs 
-  execDay day =<< readFile ("input" ++ day ++ ".txt")
-  where
-    execDay day input = case implementation day of 
-      Just (part1, part2) -> do
-        putStrLn ("part 1: " ++ part1 input)
-        putStrLn ("part 2: " ++ part2 input)
-      Nothing -> putStrLn "invalid day number"
+execDay day = case lookup day days of 
+  Just (part1, part2) -> do
+    input <- readFile ("input" ++ day ++ ".txt")
+    putStrLn ("part 1: " ++ part1 input)
+    putStrLn ("part 2: " ++ part2 input)
+  Nothing -> putStrLn $ "invalid day number, choose one of: " ++ (show $ map fst days)
+
+main = execDay =<< head <$> getArgs
