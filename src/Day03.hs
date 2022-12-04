@@ -8,7 +8,7 @@ getCompartments l = (Set.fromList left, Set.fromList right)
   where
     (left, right) = splitAt ((length l) `div` 2) l
 
-getPriosForElf leftSet rightSet = sum . map priority . Set.toList $ Set.intersection leftSet rightSet
+getPriosForElf leftSet  = sum . map priority . Set.toList . Set.intersection leftSet
 
 getBadgeOfGroup = Set.elemAt 0 . foldl1 Set.intersection . map Set.fromList
  

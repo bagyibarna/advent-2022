@@ -52,7 +52,7 @@ matchScore (Match theirs mine) = outcomePoint + shapePoint mine
       | otherwise        = 3
 
 totalScore myReader content = do
-  sum <$> (sequence $ map readLine $ lines content)
+  sum <$> (sequence . map readLine $ lines content)
   where
     readLine line = matchScore <$> (readMatch myReader line)
 
