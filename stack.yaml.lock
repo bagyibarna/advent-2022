@@ -11,4 +11,11 @@ packages:
       size: 439
   original:
     hackage: split-0.2.3.5
+- completed:
+    hackage: containers-0.6.6@sha256:008d007dfff018954e05ecdb8d628d8e32531f7dc3c6bb7e9bd55118c1224514,2589
+    pantry-tree:
+      sha256: de48bcf6b468c4793bbdd22f969d940bfe74425c74654b0efbf0487792c239b5
+      size: 2822
+  original:
+    hackage: containers-0.6.6
 snapshots: []

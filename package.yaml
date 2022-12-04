@@ -37,6 +37,7 @@ library:
   source-dirs: src
   dependencies: 
   - split
+  - containers
 
 executables:
   advent2022-exe:

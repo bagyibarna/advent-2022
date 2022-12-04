@@ -3,10 +3,14 @@ module Main (main) where
 import System.Environment (getArgs)
 import qualified Day01
 import qualified Day02
+import qualified Day03
+import qualified Day04
 
 days = [
     ("01", (Day01.part1, Day01.part2)),
-    ("02", (Day02.part1, Day02.part2))
+    ("02", (Day02.part1, Day02.part2)),
+    ("03", (Day03.part1, Day03.part2)),
+    ("04", (Day04.part1, Day04.part2))
   ]
 
 execDay day = case lookup day days of 
